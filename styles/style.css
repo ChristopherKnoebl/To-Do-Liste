@@ -102,8 +102,6 @@ button {
 .delete-button {
     position: relative;
     top: 0;
-    right: -6
-    px;
     height: 100%;
     border: 1px solid;
     z-index: 3;
