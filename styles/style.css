@@ -24,6 +24,7 @@ body {
     grid-column: 2;
     grid-row: 3;
     text-align: center;
+    position: relative;
 }
 .to-do-elemente {
     background-color: #9df9ef;
@@ -95,15 +96,18 @@ button {
         color: #edf756;
         background-color: #a28089;
         transform: translateX(2px);
-        width: fit;
+        width: fit-content;
         text-align: center;
 }
 .delete-button {
     position: relative;
     top: 0;
+    right: -6
+    px;
     height: 100%;
     border: 1px solid;
     z-index: 3;
     width: fit-content;
-    transform: translateX(10px)
+    transform: translateX(2px);
+    text-align: center;
 }
