@@ -10,12 +10,14 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="ueberschrift"><h1>To-Do-Liste</h1></div>
-            <div class="eingabe_feld">
-                <input type="text" class="eingabe" id="eingabe">
-                <button class="eingabe" id="eingabe" onclick="erweitere_to_do()">Add</button>
+            <div class="header">
+                <h1>To-Do-Liste</h1>
             </div>
-            <div class="to-do" id="to-do">
+            <div class="eingabe_feld">
+                <input type="text" class="input" id="eingabe", placeholder="Neue Aufgabe">
+                <button class="add_btn"  onclick="erweitere_to_do()">Add</button>
+            </div>
+            <div class="todo-list" id="to-do">
                 <h2> Zu erledigen</h2>
                 <ul id="elemente-liste"></ul>
             </div>
