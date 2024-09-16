@@ -1,111 +1,118 @@
 body {
+    font-family: Arial, sans-serif;
     background-color: #51e2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: (100px, auto);
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.ueberschrift {
-    grid-column: 2;
-    grid-row: 1;
+.header h1 {
+    margin: 0;
+    padding-bottom: 20px;
+    color: #333;
     text-align: center;
-
 }
 .eingabe_feld {
-    grid-column: 2;
-    grid-row: 2;
+    display: flex;
     width: 100%;
-    position: relative;
-    /* transform: translateX(25%) */
-}
-.to-do {
-    grid-column: 2;
-    grid-row: 3;
-    text-align: center;
-    position: relative;
-}
-.to-do-elemente {
-    background-color: #9df9ef;
-    border-radius: 5px;
-    height: 30px;
-    line-height: 30px;
-    width: 100%;
-    text-align: center;
-    vertical-align:middle;
-    border: 1px solid;
-    list-style-type: none;
-    margin: 2px;
-    z-index: 1;
-    position: static;
-    list-style-position: inside
-}
-.to-do-elemente-finished {
-    background-color: #ffa8B6;
-    border-radius: 5px;
-    height: 30px;
-    line-height: 30px;
-    width: 100%;
-    text-align: center;
-    vertical-align:middle;
-    border: 1px solid;
-    list-style-type: none;
-    margin: 2px;
-    z-index: 1;
-    position: static;
-    list-style-position: inside
-}
-.to-do-buttons {
-    color: black;
-    position: static;
-    background-color: transparent;
-    height: 100%;
-    width: 90%;
-    z-index: 2;
-    text-align: center;
-}
-.to-do-buttons-finished {
-    color: black;
-    position: static;
-    background-color: transparent;
-    height:100%;
-    width: 90%;
-    z-index: 2;
-    text-align: center;
+    margin-bottom: 20px;
 }
 input {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
     outline: none;
-    height: 30px;
+    font-size: 16px;
+    min-width: 0;
+}
+add_btn {
+    padding: 10px 20px;
+    background-color: #a28089;
+    color: #edf756;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.add-btn:hover {
+    background-color: #8e6d78;
+}
+.todo-list {
+    width: 100%;
+}
+.todo-list h2 {
+    color: #333;
+    text-align: center;
+}
+#elemente-liste {
+    padding: 0;
+    list-style: none;
+}
+.to-do-elemente,
+.to-do-elemente-finished {
+    background-color: #9df9ef;
     border-radius: 5px;
-    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    border: 1px solid #ccc;
 }
-button {
-    position: absolute;
-        top: 0;
-        border-radius: 5px;
-        right: 0px;
-        z-index: 2;
-        border: none;
-        top: 2px;
-        height: 30px;
-        cursor: pointer;
-        color: #edf756;
-        background-color: #a28089;
-        transform: translateX(2px);
-        width: fit-content;
-        text-align: center;
+.to-do-elemente-finished {
+    background-color: #ffa8b6;
 }
+
 .delete-button {
-    position: relative;
-    top: 0;
-    height: 100%;
-    border: 1px solid;
-    z-index: 3;
-    width: fit-content;
-    transform: translateX(2px);
-    text-align: center;
+    background-color: #ff4f4f;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.delete-button:hover {
+    background-color: #ff3b3b;
+}
+/* responsive Darstellung für kleinere Displays */
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 15px;
+    }
+
+    .input {
+        font-size: 14px;
+    }
+
+    .add-btn {
+        font-size: 14px;
+    }
+
+    .to-do-elemente,
+    .to-do-elemente-finished {
+        padding: 8px;
+    }
+
+    .delete-button {
+        padding: 4px 8px;
+    }
 }
